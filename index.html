@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="app.css">
+    <style>
+        #container {
+            display: flex;
+
+        }
+
+        .all {
+            margin: 1em;
+            display: inline-block;
+            width: 100px;
+            padding: 1em;
+            border-radius: 4px;
+            background-color: rgb(0, 0, 0);
+            text-align: center;
+            font-family: monospace;
+            font-weight: bold;
+            color: rgb(201, 201, 201);
+        }
+
+        button {
+            margin: 1em;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="all">All Items</button>
+    <button id="one">Group One</button>
+    <button id="two">Group Two</button>
+
+    <div id="container">
+        <div class="all one">1</div>
+        <div class="all two">2</div>
+        <div class="all">3</div>
+        <div class="all one">4</div>
+        <div class="all two">5</div>
+    </div>
+
+    <script src="./Isotope.js"></script>
+
+    <script>
+        var continer = document.querySelector("#container")
+
+        var isotope = new Isotope(continer, {
+            itemSelector: '.all',
+            layoutMode: 'fitRows'
+        })
+
+        var allItem = document.querySelector("#all")
+        var btn1 = document.querySelector("#one")
+        var btn2 = document.querySelector("#two")
+
+
+        allItem.onclick = () => {
+            isotope.arrange({
+                // item element provided as argument
+                filter: ".all"
+            });
+            console.log("Filtered")
+        }
+        btn1.onclick = () => {
+            isotope.arrange({
+                // item element provided as argument
+                filter: ".one"
+            });
+            console.log("Filtered")
+        }
+        btn2.onclick = () => {
+            isotope.arrange({
+                // item element provided as argument
+                filter: ".two"
+            });
+            console.log("Filtered")
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,6 @@
+.wrap{
+    max-width: 400px;
+    background: rgba(227, 255, 246, 0.38);
+    margin: 2em auto; 
+    padding: 1em;
+}
