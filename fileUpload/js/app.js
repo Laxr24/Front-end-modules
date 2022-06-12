@@ -28,25 +28,37 @@ btn.onclick = () => {
 
 
     blobs.then((msg) => {
-        console.log(msg)
-    }).then(() => {
-        console.log(data.getAll("file"));
-    }).then(() => {
-        console.log("Sending files to server...");
-    }).then(() => {
-        files.forEach((file, index) => {
-            data.append("file", file.blob)
-            data.append("id", index)
-            axios.post("http://localhost:3000", data, config).then((res) => {
-                console.log(res.data)
-                if ( window.history.replaceState ) {
-                    window.history.replaceState( null, null, window.location.href );
-                }
-            }).catch(e=>{
-                console.error("Error: "+e);
-            })
-        });
-    }).then(() => {
+
+        console.log(files)
+
+
+    })
+    .then(()=>{
+        axios.get(`http://localhost:8080/?slices=${files.length}&size=${fileInput.files[0].size}`).then((res)=>{
+            console.log(res.data);
+        }).catch(e=>{
+            console.log(e);
+        })
+    })
+    
+    // .then(() => {
+    //     console.log(data.getAll("file"));
+    // }).then(() => {
+    //     console.log("Sending files to server...");
+    // }).then(() => {
+    //     files.forEach((file, index) => {
+    //         data.append("file", file.blob)
+    //         data.append("id", index)
+    //         axios.post("http://localhost:3000", data, config).then((res) => {
+    //             console.log(res.data)
+    //             if ( window.history.replaceState ) {
+    //                 window.history.replaceState( null, null, window.location.href );
+    //             }
+    //         }).catch(e=>{
+    //             console.error("Error: "+e);
+    //         })
+    //     });
+    // }).then(() => {
         
         // for (let i = 0; i < files.length; i++) {
         //     data.append("file", files[i].blob)
@@ -60,7 +72,8 @@ btn.onclick = () => {
         // axios.post("http://localhost:3000", data, config).then((res) => {
         //     console.log(res.data)
         // })
-    }).catch((e) => {
+    // })
+    .catch((e) => {
         console.error("error: " + e);
     })
 
