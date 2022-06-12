@@ -44,7 +44,7 @@ const editor = new Yace("#editor", {
 editor.textarea.spellcheck = false;
 
 
-var btn = document.getElementById("save")
+// var btn = document.getElementById("save")
 
 
 editor.onUpdate(value => {
@@ -53,10 +53,10 @@ editor.onUpdate(value => {
 
 
 // Get the value from the editor
-btn.onclick = ()=>{
-    alert(editor.value);
-    console.log(editor.value);
-}
+// btn.onclick = ()=>{
+//     alert(editor.value);
+//     console.log(editor.value);
+// }
 
 
 

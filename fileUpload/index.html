@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload file</title>
+</head>
+<body>
+    <!-- Select a file, chop file in pieces , send configuration, save config on server 
+    , upload one by one chunk and keep track of the chunks on the server, 
+    join the temp. files with desired extension and path, move it to the desered folder and output the new file path -->
+
+    <form action="http://localhost:8080/index.php" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" id="file">
+    <input type="submit" value="Send">
+    </form>
+
+    <script>
+        var file = document.getElementById("file")
+
+        var chunkSize = 1000; 
+        file.onchange =  (e)=>{
+         let  file = e.target.files[0];
+            let chunk = file.size / chunkSize
+            let reader = new FileReader(file)
+       
+            console.log(reader);
+
+        }
+    </script>
+</body>
+</html>
