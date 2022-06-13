@@ -3,8 +3,6 @@ header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 
 
-echo "Total Slices = ". $_GET['slices']." File Size: ". $_GET['size']; 
-
 /**
  * Get the information about the file
  * Save userful informaion of that file size, number of chunks, chunkID, serials of chunks, file extension, file name, request chunk ID
@@ -24,3 +22,14 @@ echo "Total Slices = ". $_GET['slices']." File Size: ". $_GET['size'];
  * Delete the temp folder 
  * Send confirmation from server that it has been uploaded successfully. 
  */
+// echo date("D/Mm/Y"); 
+
+try{
+    include "file.php"; 
+    echo "File created successfully"; 
+} 
+catch(Exception $e){
+    echo $e; 
+}
+
+

@@ -34,7 +34,18 @@ btn.onclick = () => {
 
     })
     .then(()=>{
-        axios.get(`http://localhost:8080/?slices=${files.length}&size=${fileInput.files[0].size}`).then((res)=>{
+        // axios.get(`http://localhost:8080/?slices=${files.length}&size=${fileInput.files[0].size}`)
+        let fileConfig = {
+            name : fileInput.files[0].name, 
+            type: fileInput.files[0].type, 
+            chunks: files.length, 
+            size: fileInput.files[0].size
+        }
+        data.append("id", "Shaan3244645")
+        data.append("config", JSON.stringify(fileConfig) )
+
+        axios.post(`http://localhost:8080/`,data, config)
+        .then((res)=>{
             console.log(res.data);
         }).catch(e=>{
             console.log(e);
