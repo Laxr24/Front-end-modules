@@ -16,7 +16,7 @@
         }
         .splide__slide{
             width: 200px; 
-            height: 300px ; 
+            height: 600px ; 
             background-color: rgb(99, 48, 48);
             color: white; 
             font-size: 3em;
@@ -33,22 +33,6 @@
                   <li class="splide__slide">Slide 01</li>
                   <li class="splide__slide">Slide 02</li>
                   <li class="splide__slide">Slide 03</li>
-                  <li class="splide__slide">Slide 04</li>
-                  <li class="splide__slide">Slide 05</li>
-                  <li class="splide__slide">Slide 06</li>
-                  <li class="splide__slide">Slide 07</li>
-                  <li class="splide__slide">Slide 08</li>
-                  <li class="splide__slide">Slide 09</li>
-                  <li class="splide__slide">Slide 10</li>
-                  <li class="splide__slide">Slide 11</li>
-                  <li class="splide__slide">Slide 12</li>
-                  <li class="splide__slide">Slide 13</li>
-                  <li class="splide__slide">Slide 14</li>
-                  <li class="splide__slide">Slide 15</li>
-                  <li class="splide__slide">Slide 16</li>
-                  <li class="splide__slide">Slide 17</li>
-                  <li class="splide__slide">Slide 18</li>
-                  <li class="splide__slide">Slide 19</li>
               </ul>
         </div>
       </section>
@@ -61,10 +45,12 @@
             type: 'loop',
             drag: true, 
             snap: true,  
-            interval: 1500, 
+            speed: 400,
+            interval: 2000, 
             autoplay: true, 
             arrows: false, 
             pagination: false
+            
         }).mount()
     </script>
 </body>
