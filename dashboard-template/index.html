@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/out.css">
+    <script src="./assets/app.js" defer></script>
+
+</head>
+
+<body>
+
+    <div class=" wrapper mx-auto">
+        <!-- Top bar -->
+        <div class="py-2 bg-gray-800 text-white flex items-center w-full fixed w-full top-0 ">
+            <div class="">
+                <label for="menubtn" id="menubtn">
+                    <div class="px-4 hover:cursor-pointer menu_btn_open">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </div>
+
+                    <div class="px-4 hover:cursor-pointer hidden menu_btn_close">
+                        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                    </div>
+
+                </label>
+
+
+                <input class="hidden" type="checkbox" name="menubtn" id="menubtn">
+            </div>
+
+
+
+
+            <div class="flex-1">
+                <p class="px-2 uppercase">xer<sup>3 <span class="text-xs text-gray-400">Dashboard</span></sup></p>
+            </div>
+            <div class="text-blue-500 flex items-center justify-end">
+                <div
+                    class="p-3 rounded-full bg-green-400 bg-center bg-cover bg-[url('https://fastly.picsum.photos/id/385/200/200.jpg?hmac=dLlnX_YjZRYLV8lZ45w0UOuKuI1MiXWjEw5DZMnKNbg')]">
+                </div>
+                <div class="text-gray-200 px-2 shortmenu">
+                    <p class="text-sm hover:text-purple-400 transition hover:cursor-pointer">Howdy, amdmin</p>
+
+                    <div class="shortmenubody bg-gray-100 text-black shadow-md">
+                        <h1>Hello</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end de Top bar -->
+
+
+        <!-- Main content body area -->
+        <div class="lg:flex h-screen  pt-[2.5rem]">
+
+
+              <div id="menubody" class="bg-white w-0">
+                <ul class="">
+                    <li class="tab-btn-1 my-5 px-4 py-2 uppercase hover:cursor-pointer font-bold text-xs">Dashboard</li>
+                    <li class="tab-btn-2 my-5 px-4 py-2 uppercase hover:cursor-pointer font-bold text-xs">Report</li>
+                    <li class="tab-btn-3 my-5 px-4 py-2 uppercase hover:cursor-pointer font-bold text-xs">Check</li>
+                </ul>
+              </div>
+
+              <!-- Tab items -->
+              <div class="tab-item-1 flex-1 p-6 mx-auto">
+                <div class="flex w-full h-full overflow-scroll">
+                    <h1 class="text-2xl ">Dashboard</h1>
+                </div>
+              </div>
+              <div class="tab-item-2 flex-1 p-6 mx-auto">
+                <div class="flex w-full h-full overflow-scroll">
+                    <h1 class="text-2xl ">Report</h1>
+                </div>
+              </div>
+              <div class="tab-item-3 flex-1 p-6 mx-auto">
+                <div class="flex w-full h-full overflow-scroll">
+                    <h1 class="text-2xl ">Check</h1>
+                </div>
+              </div>
+              
+
+            <!-- Tab items -->
+
+              <!-- <div class=" flex-none lg:w-36 w-full p-6">Three</div> -->
+        </div>
+        <!-- End de Main content body area -->
+    </div>
+
+
+</body>
+
+</html>

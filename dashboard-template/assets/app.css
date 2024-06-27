@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+#menubody{
+    overflow: hidden;
+    background-color: white; 
+}
+
+
+.menubody{
+    width: 20rem;
+    height: 100%;
+    overflow: hidden;
+    animation-name: animStart;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.closeMenu{
+    animation-name: animEnd;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animStart {
+    from{
+        width: 0;
+        height: 100%;
+        opacity: 0;
+    }
+    to{
+        width: 20rem;
+        height: 100%;
+        opacity: 1;
+        box-shadow: 5px -10px 20px  #d2d2d29c;
+    }
+}
+@keyframes animEnd {
+    from{
+        width: 20rem;
+        height: 100%;
+        opacity: 1;
+        box-shadow: 5px -10px 20px  #d2d2d29c;
+    }
+    to{
+        width: 0;
+        height: 100%; 
+        opacity: 0;
+    }
+}
+
+
+.shortmenu{
+    position: relative;
+}
+.shortmenubody{
+    display: none;
+    padding: 2em 2em;
+    border-radius: .3em;
+}
+
+.shortmenu:hover .shortmenubody{
+    position: absolute; 
+    top: 0em; 
+    display: block;
+}
