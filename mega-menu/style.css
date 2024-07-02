@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    overflow: hidden;
+}
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+.menu-item{
+    margin: 0 2em; 
+    padding: 1em 0;
+    border-bottom: 2px solid rgb(255, 255, 255);
+}
+.menu-item:hover{
+    border-bottom: 2px solid black;
+}
+.menu-item a {
+    text-decoration: none;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: darkslategray;
+    font-weight: 800;
+    transition: color .2s ease-in-out;
+}
+.menu-item a:hover{
+    color: rgb(63, 178, 178);
+}
+
+.megamenu{
+    z-index: 100;
+    visibility: hidden;
+    height: 0px;
+    overflow: hidden;
+    position: absolute; 
+    padding: 2.5em 3em;
+    top: 3.6em ;
+    left: 0;
+    background-color:rgb(245, 175, 175);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 26px 21px #f7f7f7; 
+    transition: all .4s ease-in-out;
+    
+}
+.megamenu ul{
+    list-style: none;
+}
+.megamenu ul li{
+    margin: 2em 0;
+}
+.megamenu ul li a{
+    color: darkblue;
+    font-weight: 400;
+}
+.megamenu ul li a:hover{
+    color: rgb(127, 127, 206);
+}
+.megamenu img{
+    min-width: 200px;
+    height: 200px;
+}
+.menu-item:hover .megamenu{
+    visibility: visible;
+    height: 300px;
+}
+.menu-close{
+    display: none;
+    justify-content: center;
+    margin: 2em 0 ;
+}
+.menu-open{
+    display: none;
+}
+
+
+@media only screen and (max-width:600px){
+    .menu{
+        /* visibility: hidden; */
+        flex-direction: column;
+        justify-content: start;
+        width: 50vw;
+        height: 100vh;
+        overflow: scroll;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        top: 0;
+        left: 0; 
+    }
+    .menu-item{
+        /* position: relative; */
+    }
+    .megamenu{
+        visibility: hidden;
+        position:static;
+        padding: 0;
+        flex-direction: column ;
+        overflow-y: scroll;
+    }
+    .menu-item:hover .megamenu{
+        visibility: visible;
+        height:fit-content;
+    }
+}
